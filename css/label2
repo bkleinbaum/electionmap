@@ -1,0 +1,9 @@
+var callLocatorLayer= L.geoJson(nabecentroid, {
+    style: function (feature) {
+		return {color: '#03f'};
+    	},
+    pointToLayer: function (feature, latlng) {
+        return L.marker(latlng).bindLabel( feature.properties.neighborho, {noHide: true});
+    }
+}).addTo(map);
+

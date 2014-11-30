@@ -1,0 +1,22 @@
+var labelStyle = {
+    color: '#CCC',
+    opacity: 1
+};
+
+var labelMarkerOptions = {
+        opacity: 0,
+        fillOpacity: 0
+};
+
+var labelLayer = L.geoJson(nabecentroid, {
+        pointToLayer: function (feature, latlng) {
+                return L.circleMarker(latlng, labelMarkerOptions);
+        },
+        onEachFeature: function (feature, layer) {
+                layer.bindLabel(feature.properties.neighborho, {noHide:true});
+        }
+});
+
+labelLayer.eachLayer(function(l) {l.showLabel();});
+map.addLayer(labelLayer);
+layerControl.addOverlay(labelLayer, 'Site Labels');
