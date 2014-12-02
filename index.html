@@ -6,12 +6,45 @@
 	<link rel="stylesheet" href="css/skeleton.css"/>
 	<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css"/>
 	<link href='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-label/v0.2.1/leaflet.label.css' rel='stylesheet' />
+	<link href='https://api.tiles.mapbox.com/mapbox.js/v2.1.4/mapbox.css' rel='stylesheet' />
 	<link rel="stylesheet" href="css/style.css">
 	
 </head>
 <body>
 
+<div class = "container">
+<div class = "sixteen columns">
+<div class ="header"><h1>Empty Lots in NYC</h1></div> 
+	<div id = "description"> 
+		This map shows empty lots owned by the City of New York as well as the MTA.
+		It uses data collected by <a href = "http://www.596acres.org" target = "_blank">596 Acres</a> that has been converted into multipe geosjon files using <a href="http://www.togeojson.com" target = "_blank">togeojson.io</a>. You can view lots by size using the legend below.
+	</div>
+</div>
+</div>	
 
+<div class = "container">
+<div class = "sixteen columns">
+		<div class = "four columns alpha">
+		<div id = "demo"><a id="race" href="#">View Results by Plurality Neighborhood Race</a></div>
+		</div>
+
+<div class = "four columns">
+		<div id = "money"><a id="income" href="#">View Results by Neighborhood's Average income</a></div>
+</div>		
+		
+
+<div class = "four columns">
+		<div id = "homes"><a id="rentalrate" href="#">View Results by Neighborhood's Average Rental Rate </a></div>
+</div>
+
+<div class = "four columns omega">
+		<div id = "annotated"><a id="annotation" href="#">View Results by Neighborhood's Average Rental Rate </a></div>
+</div>
+
+		
+
+</div>
+</div>
 
 <div class = "container">
 	<div class = "sixteen columns">
@@ -29,7 +62,7 @@
 <script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.4/mapbox.js'></script>
 <script src='//api.tiles.mapbox.com/mapbox.js/plugins/leaflet-omnivore/v0.2.0/leaflet-omnivore.min.js'></script>
 
-<script src="https://rawgit.com/calvinmetcalf/leaflet-ajax/master/dist/leaflet.ajax.min.js"></script>
+<script src="js/leaflet.ajax.min.js"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src='/src/Leaflet.label.js'></script>
 <script src='webdata/nabecentroid.js'></script>
