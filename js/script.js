@@ -7,12 +7,6 @@ map.setView([40.681339, -73.96302], 10
 
 
 
-// var Esri_WorldGrayCanvas = L.tileLayer('http://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}', {
-// 	attribution: 'Tiles &copy; Esri &mdash; Esri, DeLorme, NAVTEQ'
-// 	// maxZoom: 14,
-// 	// minZoom: 9
-// }).addTo(map);
-
 L.mapbox.accessToken = 'pk.eyJ1IjoiYms3NDEiLCJhIjoiZFNVcTNvdyJ9.h8G4i4ib7PicRCiejvZW6g';
 // Replace 'examples.map-i87786ca' with your map id.
 var mapboxTiles = L.tileLayer('https://{s}.tiles.mapbox.com/v3/bk741.vs2d42t9/{z}/{x}/{y}.png', {
@@ -30,153 +24,44 @@ var mapboxTiles = L.tileLayer('https://{s}.tiles.mapbox.com/v3/bk741.b5k4kj4i/{z
 
 //import race layer
 
-  //white
 
-function getDemoWColor(d) {
-    return d > 100 ? '#005824' :
-           d > 70  ? '#238b45' :
-           d > 60  ? '#41ae76' :
-           d > 50  ? '#66c2a4' :
-           d > 40  ? '#99d8c9' :
-           d > 30  ? '#ccece6' :
-           d > 20  ? '#edf8fb' :
-           			 '#000'; 	
+function getDemoColor(d) {
+    return  d == "White" ? '#e41a1c' :
+           d == "Asian"  ? '#984ea3' :
+           d == "Black"  ? '#377eb8' :
+           d == "Hisp"  ? '#4daf4a' :
+                        '#ff7f00';  
+          
 }
 
 
-function wStyle(feature) {
+function demoStyle(feature) {
     return {
         fillColor: '#000',
         weight: 2,
         opacity: 1,
-        color: getDemoWColor(feature.properties.white_White),
+        color: getDemoColor(feature.properties.races_Race),
         fillOpacity: 0
     };
 }
 
 
-var white = new L.GeoJSON.AJAX("webdata/white.geojson", {style: wStyle});
+var demoLayer = new L.GeoJSON.AJAX("webdata/races98.geojson", {style: demoStyle});
 
-  //Asian 
-
-function getDemoAColor(d) {
-    return d > 100 ? '#91003f' :
-           d > 70  ? '#ce1256' :
-           d > 60  ? '#e7298a' :
-           d > 50  ? '#df65b0' :
-           d > 40  ? '#c994c7' :
-           d > 30  ? '#d4b9da' :
-           d > 20  ? '#f1eef6' :
-           			 '#000'; 	
-}
-
-
-function AStyle(feature) {
-    return {
-        fillColor: '#000',
-        weight: 2,
-        opacity: 1,
-        color: getDemoAColor(feature.properties.asian_Asian),
-        fillOpacity: 0
-    };
-}
-
-var aLegend = L.control({position: 'bottomright'});
-
-aLegend.onAdd = function (map) {
-
-    
-  var div = L.DomUtil.create('div', 'info legend'),
-        grades = [20, 30, 40, 50, 60, 70, 80],
-        labels = ["% Asian in Asian Plurality Districts"];
-
-  for (var i = 0; i < grades.length; i++) {
-        from = grades [i];
-        to = grades[i+1]-1;
-
-    labels.push(
-        "$"+'<i style="background:' + getDemoAColor(from + 1) + '"></i> ' +
-        from + (to ? '&ndash;' + to : '+'));
-        }
-        div.innerHTML = labels.join('<br>');
-        return div;
-
-      };
-
-
-
-
-var asian = new L.GeoJSON.AJAX("webdata/asian.geojson", {style: AStyle});
-
-  //black
-
-function getDemoBColor(d) {
-    return d > 80 ? '#084594' :
-           d > 70  ? '#2171b5' :
-           d > 60  ? '#4292c6' :
-           d > 50  ? '#6baed6' :
-           d > 40  ? '#9ecae1' :
-           d > 30  ? '#c6dbef' :
-           d > 20  ? '#eff3ff' :
-           			 '#000'; 	
-}
-
-function BStyle(feature) {
-    return {
-        fillColor: '#000',
-        weight: 2,
-        opacity: 1,
-        color: getDemoBColor(feature.properties.black_Black),
-        fillOpacity: 0
-    };
-}
-
-
-
-var black = new L.GeoJSON.AJAX("webdata/black.geojson", {style: BStyle});
-
-  //hispanic
-
-function getDemoHColor(d) {
-    return d > 100 ? '#99000d' :
-           d > 70  ? '#cb181d' :
-           d > 60  ? '#ef3b2c' :
-           d > 50  ? '#fb6a4a' :
-           d > 40  ? '#fc9272' :
-           d > 30  ? '#fcbba1' :
-           d > 20  ? '#fee5d9' : 
-           			   '#000'; 	
-}
-
-function HStyle(feature) {
-    return {
-        fillColor: '#000',
-        weight: 2,
-        opacity: 1,
-        color: getDemoHColor(feature.properties.Hisp_Hisp),
-        fillOpacity: 0
-    };
-}
-
-
-var hisp = new L.GeoJSON.AJAX("webdata/hisp.geojson", {style: HStyle});
-
-//create demolayer 
-
-var demoLayer = L.layerGroup([hisp, black, asian, white]);
 
 
 //import income layer
 
 function getIColor(d) {
-    return d > 80000  ? '#41ab5d' :
-           d > 60000  ? '#74c476' :
-           d > 40000  ? '#a1d99b' :
-           d > 20000  ? '#c7e9c0' :
-           d >     1  ? '#edf8e9' :
+    return d > 80000  ? '#0868ac' :
+           d > 60000  ? '#43a2ca' :
+           d > 40000  ? '#7bccc4' :
+           d > 20000  ? '#bae4bc' :
+           d >     1  ? '#f0f9e8' :
                         '#000';  
           
 }
+
 
 
 function iStyle(feature) {
@@ -185,25 +70,26 @@ function iStyle(feature) {
         weight: 2,
         opacity: 1,
         color: getIColor(feature.properties.meanincome),
-        fillOpacity: 1
+        fillOpacity: 0
     };
 }
 
- var income = new L.GeoJSON.AJAX("webdata/income.geojson", {style: iStyle});
+ var income = new L.GeoJSON.AJAX("webdata/income98.geojson", {style: iStyle});
 
 //import ownership layer
 
 function getColor(d) {
-    return d > 60  ?  '#800026' :
-           d > 40  ? '#E31A1C' :
-           d > 20  ? '#FD8D3C' :
-           d > 10  ? '#FED976' :
-           d >  1  ? '#FFEDA0' :
+    return d > 60  ?  '#7a0177' :
+           d > 40  ? '#c51b8a' :
+           d > 20  ? '#f768a1' :
+           d > 10  ? '#fbb4b9' :
+           d >  1  ? '#feebe2' :
                     '#000';  
 }
 
+
 function getWeight (d) {
-  return    d > 1   ? 1.3:
+  return    d > 1   ? 2:
                 .5 ;
 
 }
@@ -219,7 +105,11 @@ function style(feature) {
 }
 
 
-var ownership = new L.GeoJSON.AJAX("webdata/ziphouse.geojson", {style: style});
+
+
+
+
+var ownership = new L.GeoJSON.AJAX("webdata/rent98.geojson", {style: style});
 
 
  //toggle layers
@@ -230,17 +120,23 @@ $("#demo").click(function(event) {
         $(this).removeClass('selected');
         map.removeLayer(demoLayer);
         map.removeLayer(mayorEDblank);
-        $("#demoLegend").css({ visibility: "hidden"});
+        $("#demoLegend").css("visibility", "visible");
         $(this).css({'background-color':'#B1ACBD'});
 
     } else {
+
+      //add layers
+      $(this).addClass('selected');
         map.addLayer(demoLayer); 
-        map.addLayer(mayorEDblank);      
+        map.addLayer(mayorEDblank); 
+      //remove layers
         map.removeLayer(income);
         map.removeLayer(ownership);
+      //remove legend 
         $("#demoLegend").css("visibility", "visible");
-        $("#rentalLegend").css({ visibility: "hidden"});  
-        $("incomeLegend").css({ visibility: "hidden"});
+        $("#rentalLegend").css("visibility", "hidden");  
+        $("#incomeLegend").css("visibility", "hidden");
+      //change colors
         $("#demo").css({'background-color':'#C1ACBD'});
         $("#money").css({'background-color':'#B1ACBD'});
         $("#homes").css({'background-color':'#B1ACBD'});
@@ -254,22 +150,24 @@ $("#money").click(function(event) {
     if(map.hasLayer(income)) {
         $(this).removeClass('selected');
         map.removeLayer(income);
-       $("#incomeLegend").css({ visibility: "hidden"});
+       $("#incomeLegend").css("visibility", "hidden");
         map.removeLayer(mayorEDblank)
         $(this).css({'background-color':'#B1ACBD'});
        
 
     } else {
         //add Layers
-        map.addLayer(income);  
-        map.addLayer(mayorEDblank);  
-        $("#incomeLegend").css("visibility", "visible"); 
-        //remove maps
         $(this).addClass('selected');
+        map.addLayer(income);  
+        map.addLayer(mayorEDblank);
+        
+        
+        //remove map
         map.removeLayer(demoLayer);
         map.removeLayer(ownership);
 
         //remove legends
+        $("#incomeLegend").css("visibility", "visible"); 
         $("#rentalLegend").css("visibility", "hidden");
         $("#demoLegend").css("visibility", "hidden"); 
         
@@ -292,13 +190,12 @@ $("#homes").click(function(event) {
     } else {
         
         //add layers
-        map.addLayer(ownership);  
-        map.addLayer(mayorEDblank)
-        $("#rentalLegend").css("visibility", "visible");
         $(this).addClass('selected');
+        map.addLayer(ownership);  
+        map.addLayer(mayorEDblank);
+        $("#rentalLegend").css("visibility", "visible");
         
         //remove layers
-
         map.removeLayer(demoLayer);        
         map.removeLayer(income);
         

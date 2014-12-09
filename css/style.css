@@ -1,8 +1,12 @@
+body {
+  font-family: 'News Cycle', sans-serif;
+  background-color: #F2F2F2;
+}
 
 
 #map {
-	
-	height: 75vh;
+  
+  height: 75vh;
 }
 
 
