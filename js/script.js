@@ -165,7 +165,7 @@ $("#money").click(function(event) {
         //add Layers
         
         map.addLayer(income);  
-        map.addLayer(mayorEDblank2);
+        map.addLayer(mayorEDblank);
         $("#incomeLegend").css("visibility", "visible"); 
         
         //remove legends
