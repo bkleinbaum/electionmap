@@ -1,12 +1,12 @@
 body {
-  font-family: 'News Cycle', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   background-color: #F2F2F2;
 }
 
 
 #map {
   
-  height: 75vh;
+  height: 65vh;
 }
 
 
@@ -14,6 +14,8 @@ body {
     background-color: #B1ACBD;
     border: 1px solid gray;
     box-sizing: border-box;
+    text-align: center;
+    font-size: 12px;
    
   }
 
@@ -21,27 +23,15 @@ body {
     color: white;
 }
 
+#voteExplanation{
+  font-size: 14px;
+}
+
 a:link {
     color: white;
     text-decoration: none;
 }
 
-
-#test {
-    height: 100px;
-    width: 200px;
-    background: rgba(15, 51, 56, 0.59);
-    position: absolute;
-    bottom: 100%;
-    text-transform: capitalize;
-    font-family: sans-serif;
-    color: #FFFAFA;
-    font-size: 14px;
-    box-sizing: border-box;
-    overflow: scroll;
-    cursor:pointer;
-    z-index:10;
-}
 
 #legendTitle {
     font-size:10px;
@@ -51,9 +41,9 @@ a:link {
   display:block;
   float:left;
   height:15px;
-  width: 18%;
+  width: 20%;
   text-align:center;
-  font-size:8px;
+  font-size:9px;
   color:#808080;
   }
 
@@ -61,11 +51,31 @@ a:link {
   display: block;  
   float:left;
   height:15px;
-  width: 15%;
+  width: 17.275%;
   text-align:center;
-  font-size:9px;
+  font-size:10px;
   color:#808080;
   border-style:solid; 
+}
 
+#candLegend {
+  margin-left: 20px; 
+  text-align: center;
+  font-size:10px;
+  color:#7a0177;
+  }
+
+.dotLegend {
+  display: inline;
+  float: left;
+  margin-left: 25px;
+  text-align: center;
+  height:10px;
+  width: 10px;
+  border-radius:  5px;
+ /* text-align:center;*/
+  font-size:12px;
+/*  color:#808080;*/
+/*  border-style:solid; */
 
   }

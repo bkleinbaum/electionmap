@@ -1,7 +1,7 @@
 //add map
 
 var map = L.map('map');
-map.setView([40.681339, -73.96302], 10
+map.setView([40.711339, -73.96302], 10
 
 	);
 
@@ -120,7 +120,7 @@ $("#demo").click(function(event) {
         $(this).removeClass('selected');
         map.removeLayer(demoLayer);
         map.removeLayer(mayorEDblank);
-        $("#demoLegend").css("visibility", "visible");
+        $("#demoLegend").css("visibility", "hidden");
         $(this).css({'background-color':'#B1ACBD'});
 
     } else {

@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<title>election data</title>
 	<link rel="stylesheet" href="css/skeleton.css"/>
-  <link href='http://fonts.googleapis.com/css?family=News+Cycle:400,700' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css"/>
 	<link href='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-label/v0.2.1/leaflet.label.css' rel='stylesheet' />
 	<link href='https://api.tiles.mapbox.com/mapbox.js/v2.1.4/mapbox.css' rel='stylesheet' />
@@ -15,123 +15,190 @@
 
 
 <div class = "container">
-<div class = "sixteen columns">
-<div class ="header"><h1>Empty Lots in NYC</h1></div> 
-  <div id = "description"> 
-    This map shows empty lots owned by the City of New York as well as the MTA.
-    It uses data collected by <a href = "http://www.596acres.org" target = "_blank">596 Acres</a> that has been converted into multipe geosjon files using <a href="http://www.togeojson.com" target = "_blank">togeojson.io</a>. You can view lots by size using the legend below.
+  <div class = "sixteen columns">
+    <div class ="header">
+      <h2>New York City 2013 Mayoral Primary Election Results</h2>
+    </div> 
+    <div id = "description"> 
+    </div>
   </div>
-</div>
 </div>  
 
 <div class = "container">
-<div class = "sixteen columns">
-    <div class = "four columns alpha">
-    <div id = "demo"><a id="race" href="#">View Results by Plurality Neighborhood Race</a></div>
+  <div class = "sixteen columns"
+    <div id = "voteExplanation">
+    Each dot represents one vote in an election district for the following candidates:<br>
+    </div>    
+  </div>
+
+<div id='dotLegend'>
+  <div class = "container">
+    <div class = "one
+     columns alpha">
+      <div class = "dotLegend" style = 'background-color: #FF496C'></div> 
     </div>
-
-<div class = "four columns">
-    <div id = "money"><a id="income" href="#">View Results by Neighborhood's Average income</a></div>
-</div>    
-    
-
-<div class = "four columns">
-    <div id = "homes"><a id="rentalrate" href="#">View Results by Neighborhood's Average Rental Rate </a></div>
-</div>
-
-<div class = "four columns omega">
-    <div id = "annotated"><a id="annotation" href="#">View Results by Neighborhood's Average Rental Rate </a></div>
-</div>
-
-    
-</div>
-</div>
-
-
-
-
-<div class = "container">
-<div class = "sixteen columns">
-
-
-<div class = "four columns alpha">
-<div id='demoLegend' style='visibility:hidden'>
-  <div class = legendTitle>Plurality Race in Zip Code <br><br> </div>
-  <nav class='legend clearfix'>
-    <span style = 'border-color:#984ea3;'></span>
-    <span style = 'border-color:#377eb8;'></span>
-    <span style='border-color:#4daf4a;'></span>
-    <span style='border-color:#e41a1c;'></span>
-    <span style='border-color:#ff7f00;'></span>
-    <label>Asian</label>
-    <label>Black</label>
-    <label>Hispanic</label>
-    <label>White</label>
-    <label>Other</label>
+    <div class = "one
+     columns">
+      <div class = "dotLegend" style = 'background-color: #FFA474'></div>
+    </div>
+    <div class = "one
+     columns">
+      <div class = "dotLegend" style = 'background-color: #1F75FE'></div> 
+    </div>
+    <div class = "one
+     columns">
+      <div class = "dotLegend" style = 'background-color: #9F8170'></div> 
+    </div>
+    <div class = "one
+     columns">
+      <div class = "dotLegend" style = 'background-color: #C8385A'></div> 
+    </div>
+    <div class = "one
+     columns">
+      <div class = "dotLegend" style = 'background-color: #CEFF1D'></div>
+    </div>
+    <div class = "one
+     columns">
+      <div class = "dotLegend" style = 'background-color: #FF1DCE'></div>
+    </div>
+    <div class = "one
+     columns">
+      <div class = "dotLegend" style = 'background-color: #FEFE22'></div>
+    </div>
+    <div class = "one
+     columns omega">
+      <div class = "dotLegend" style = 'background-color: #FAE7B5'></div>
+    </div>
   </div>
+</div> 
 
-</div>
 
-
-<div class = "four columns">
-<div id='incomeLegend' style='visibility:hidden'>
-  <div class = legendTitle>Average income in zip code <br>(by thousands)</div>
-  <nav class='legend clearfix'>
-    <span style = 'border-color:#f0f9e8;'></span>
-    <span style = 'border-color:#bae4bc;'></span>
-    <span style='border-color:#7bccc4;'></span>
-    <span style='border-color:#43a2ca;'></span>
-    <span style='border-color:#0868ac;'></span>
-    <label>0 - $20</label>
-    <label>$21 - $40</label>
-    <label>$41 - $60</label>
-    <label>$61 - $80</label>
-    <label>$80+</label>
+<div id='candLegend'>
+  <div class = "container">
+    <div class = "one columns alpha">
+    Albanese 
+    </div>
+    <div class = "one columns">
+    Credico
+    </div>
+    <div class = "one columns">
+    de Blasio
+    </div>
+    <div class = "one columns">
+    Grimaldi
+    </div>
+    <div class = "one columns">
+    Liu
+    </div>
+    <div class = "one columns">
+    Quinn
+    </div>
+    <div class = "one columns">
+    Salgado
+    </div>
+    <div class = "one columns">
+    Thompson
+    </div>
+    <div class = "one columns omega">
+    Weiner
+    </div>
   </div>
-
- 
-          
-
-</div>
-
-
-<div class = "four columns omega">
-<div id='rentalLegend' style='visibility:hidden'>
-  <div class = legendTitle>Percent of Population which Rents by Zip Code</div>
-  <nav class='legend clearfix'>
-    <span style = 'border-color:#feebe2;'></span>
-    <span style = 'border-color:#fbb4b9;'></span>
-    <span style='border-color:#f768a1;'></span>
-    <span style='border-color:#c51b8a;'></span>
-    <span style='border-color:#7a0177;'></span>
-    <label>0 - 10%</label>
-    <label>11% - 20%</label>
-    <label>21% - 40%</label>
-    <label>40% - 60%</label>
-    <label>60%+</label>
-  </div>
-  </div>
-
-</div>
 </div> 
 
 <div class = "container">
   <div class = "sixteen columns">
-<div id="map"></div>
+    <div id="map"></div>
+  </div>
+</div>  
+ 
+
+
+<div class = "container">
+  <div class = "sixteen columns">
+      <div class = "four columns alpha">
+        <div id = "demo"><a id="race" href="#">View Results with Plurality Zip Code Race</a></div>
+      </div>
+
+      <div class = "four columns">
+        <div id = "money"><a id="income" href="#">View Results with Zip Code's Average Income (thousands)</a></div>
+      </div>    
+      
+      <div class = "four columns">
+        <div id = "homes"><a id="rentalrate" href="#">View Results with Zip Code's Rental Rate </a></div>
+      </div>
+
+      <div class = "four columns omega">
+        <div id = "annotated"><a id="annotation" href="#">View Results by Zip Code's Average Rental Rate </a></div>
+      </div>  
+  </div>
+</div>
+
+<div class = "container">
+  <div class = "sixteen columns">
+    <div class = "four columns alpha">
+      <div id='demoLegend' style='visibility:hidden'>
+        <div class = 'legendTitle'></div>
+        <nav class='legend clearfix'>
+          <span style = 'border-color:#984ea3;'></span>
+          <span style = 'border-color:#377eb8;'></span>
+          <span style='border-color:#4daf4a;'></span>
+          <span style='border-color:#e41a1c;'></span>
+          <span style='border-color:#ff7f00;'></span>
+          <label>Asian</label>
+          <label>Black</label>
+          <label>Hispanic</label>
+          <label>White</label>
+          <label>Other</label>
+        </div>
+      </div>
+
+
+  <div class = "four columns">
+    <div id='incomeLegend' style='visibility:hidden'>
+      <div class = 'legendTitle'></div>
+        <nav class='legend clearfix'>
+          <span style = 'border-color:#f0f9e8;'></span>
+          <span style = 'border-color:#bae4bc;'></span>
+          <span style='border-color:#7bccc4;'></span>
+          <span style='border-color:#43a2ca;'></span>
+          <span style='border-color:#0868ac;'></span>
+          <label>0 - $20</label>
+          <label>$21 - $40</label>
+          <label>$41 - $60</label>
+          <label>$61 - $80</label>
+          <label>$80+</label>
+    </div>
+  </div>
+ 
+
+  <div class = "four columns omega">
+    <div id='rentalLegend' style='visibility:hidden'>
+      <div class = 'legendTitle'></div>
+      <nav class='legend clearfix'>
+        <span style = 'border-color:#feebe2;'></span>
+        <span style = 'border-color:#fbb4b9;'></span>
+        <span style='border-color:#f768a1;'></span>
+        <span style='border-color:#c51b8a;'></span>
+        <span style='border-color:#7a0177;'></span>
+        <label>0 - 10%</label>
+        <label>11% - 20%</label>
+        <label>21% - 40%</label>
+        <label>40% - 60%</label>
+        <label>60%+</label>
+    </div>
+  </div>
 </div>
 </div>
-
-
-
 
 <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+
 <script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.4/mapbox.js'></script>
 <script src='//api.tiles.mapbox.com/mapbox.js/plugins/leaflet-omnivore/v0.2.0/leaflet-omnivore.min.js'></script>
+<script src='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-label/v0.2.1/leaflet.label.js'></script>
 
 <script src="js/leaflet.ajax.min.js"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src='/src/Leaflet.label.js'></script>
-<script src='webdata/nabecentroid.js'></script>
 <script src="js/script.js"></script>
 	
 </body>
