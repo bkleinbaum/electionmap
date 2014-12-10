@@ -29,7 +29,7 @@ function getDemoColor(d) {
     return  d == "White" ? '#e41a1c' :
            d == "Asian"  ? '#984ea3' :
            d == "Black"  ? '#377eb8' :
-           d == "Hisp"  ? '#4daf4a' :
+           d == "Hisp"   ? '#4daf4a' :
                         '#ff7f00';  
           
 }
@@ -105,10 +105,6 @@ function style(feature) {
 }
 
 
-
-
-
-
 var ownership = new L.GeoJSON.AJAX("webdata/rent98.geojson", {style: style});
 
 
@@ -125,13 +121,17 @@ $("#demo").click(function(event) {
 
     } else {
 
+      
+    //remove layers
+    map.removeLayer(income);
+    map.removeLayer(ownership);
+    map.removeLayer(mayorEDblank);
+
       //add layers
-      $(this).addClass('selected');
+      
         map.addLayer(demoLayer); 
         map.addLayer(mayorEDblank); 
-      //remove layers
-        map.removeLayer(income);
-        map.removeLayer(ownership);
+      
       //remove legend 
         $("#demoLegend").css("visibility", "visible");
         $("#rentalLegend").css("visibility", "hidden");  
@@ -140,7 +140,7 @@ $("#demo").click(function(event) {
         $("#demo").css({'background-color':'#C1ACBD'});
         $("#money").css({'background-color':'#B1ACBD'});
         $("#homes").css({'background-color':'#B1ACBD'});
-
+    $(this).addClass('selected');
    }
 });
 
@@ -151,23 +151,24 @@ $("#money").click(function(event) {
         $(this).removeClass('selected');
         map.removeLayer(income);
        $("#incomeLegend").css("visibility", "hidden");
-        map.removeLayer(mayorEDblank)
+        map.removeLayer(mayorEDblank);
         $(this).css({'background-color':'#B1ACBD'});
        
 
     } else {
-        //add Layers
-        $(this).addClass('selected');
-        map.addLayer(income);  
-        map.addLayer(mayorEDblank);
-        
-        
+       
         //remove map
         map.removeLayer(demoLayer);
         map.removeLayer(ownership);
+        map.removeLayer(mayorEDblank);
 
-        //remove legends
+        //add Layers
+        
+        map.addLayer(income);  
+        map.addLayer(mayorEDblank2);
         $("#incomeLegend").css("visibility", "visible"); 
+        
+        //remove legends
         $("#rentalLegend").css("visibility", "hidden");
         $("#demoLegend").css("visibility", "hidden"); 
         
@@ -175,6 +176,8 @@ $("#money").click(function(event) {
         $(this).css({'background-color':'#C1ACBD'});
         $("#demo").css({'background-color':'#B1ACBD'});
         $("#homes").css({'background-color':'#B1ACBD'});
+      
+       $(this).addClass('selected'); 
    }
 });
 
@@ -184,21 +187,23 @@ $("#homes").click(function(event) {
         $(this).removeClass('selected');
         map.removeLayer(ownership);
         $("#rentalLegend").css("visibility", "hidden");  
-        map.removeLayer(mayorEDblank)
+        map.removeLayer(mayorEDblank);
         $(this).css({'background-color':'#B1ACBD'});
         
     } else {
         
-        //add layers
-        $(this).addClass('selected');
+
+    //remove layers
+        map.removeLayer(demoLayer);        
+        map.removeLayer(income);
+        map.removeLayer(mayorEDblank);
+        
+    //add layers
         map.addLayer(ownership);  
         map.addLayer(mayorEDblank);
         $("#rentalLegend").css("visibility", "visible");
         
-        //remove layers
-        map.removeLayer(demoLayer);        
-        map.removeLayer(income);
-        
+    
         //remove legends
         $("#demoLegend").css("visibility", "hidden"); 
         $("#incomeLegend").css("visibility", "hidden"); 
@@ -207,8 +212,7 @@ $("#homes").click(function(event) {
         $(this).css({'background-color':'#C1ACBD'});
         $("#demo").css({'background-color':'#B1ACBD'});
         $("#money").css({'background-color':'#B1ACBD'});
-        
-
+     $(this).addClass('selected');
    }
 });
 
@@ -276,8 +280,4 @@ var mayorEDblank = new L.GeoJSON.AJAX("webdata/mayored.geojson", {
   style: mayorStyleBlank,
   onEachFeature: makeMayor1Markers
 });
-
-
-
-
 
