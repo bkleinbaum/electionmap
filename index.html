@@ -24,14 +24,7 @@
   </div>
 </div>  
 
-<div class = "container">
-  <div class = "sixteen columns"
-    <div id = "voteExplanation">
-    Each dot represents one vote in an election district for the following candidates:<br>
-    </div>    
-  </div>
-
-<div id='dotLegend'>
+<!-- <div id='dotLegend'>
   <div class = "container">
     <div class = "one
      columns alpha">
@@ -103,40 +96,51 @@
     Weiner
     </div>
   </div>
-</div> 
+</div>  -->
 
-<div class = "container">
-  <div class = "sixteen columns">
+
     <div id="map"></div>
-  </div>
-</div>  
+ 
  
 
 
-<div class = "container">
-  <div class = "sixteen columns">
-      <div class = "four columns alpha">
-        <div id = "demo"><a id="race" href="#">View Results with Plurality Zip Code Race</a></div>
-      </div>
+<div class = "sideBar">
 
-      <div class = "four columns">
-        <div id = "money"><a id="income" href="#">View Results with Zip Code's Average Income (thousands)</a></div>
-      </div>    
-      
-      <div class = "four columns">
-        <div id = "homes"><a id="rentalrate" href="#">View Results with Zip Code's Rental Rate </a></div>
-      </div>
+   <div id = "voteExplanation">
+    Each dot represents one vote in an election district for the following candidates:<br>
+    </div>    
 
-      <div class = "four columns omega">
-        <div id = "annotated"><a id="annotation" href="#">View Results by Zip Code's Average Rental Rate </a></div>
-      </div>  
-  </div>
+
+  <table style="width 100%">
+    <tr>
+       <td><div class = "dotLegend" style = 'background-color: #FF496C'> <br>Albanese</div></td> 
+       <td><div class = "dotLegend" style = 'background-color: #FFA474'><br>Credico</div></td>
+       <td><div class = "dotLegend" style = 'background-color: #1F75FE'><br>de Blasio</div></td>
+    </tr>
+    <tr>   
+       <td><div class = "dotLegend" style = 'background-color: #9F8170'><br>Grimaldi</div></td> 
+       <td><div class = "dotLegend" style = 'background-color: #C8385A'><br>Liu</div></td>  
+       <td><div class = "dotLegend" style = 'background-color: #CEFF1D'><br>Quinn</div></td>
+    </tr>   
+    <tr>
+       <td><div class = "dotLegend" style = 'background-color: #FF1DCE'><br>Salgado</div></td>
+       <td><div class = "dotLegend" style = 'background-color: #FEFE22'><br>Thompson</div></td>
+       <td><div class = "dotLegend" style = 'background-color: #FAE7B5'><br>Weiner</div></td>
+     </tr>
+  </table>  
+
+  <div class = "legends">
+
+
+<div id='demoLegend' style='display:none'>
+    <div id="legendColor" style ="border-color:#984ea3"><br>Asian</div>
+    <div id="legendColor" style ="border-color:#377eb8"><br>Black</div>
+    <div id="legendColor" style ="border-color:#4daf4a"><br>Hispanic</div>
+    <div id="legendColor" style ="border-color:#e41a1c"><br>White</div>
+    <div id="legendColor" style ="border-color:#ff7f00"><br>Other</div>
 </div>
-
-<div class = "container">
-  <div class = "sixteen columns">
-    <div class = "four columns alpha">
-      <div id='demoLegend' style='visibility:hidden'>
+<!-- 
+      <div id='demoLegend' style='display:none'>
         <div class = 'legendTitle'></div>
         <nav class='legend clearfix'>
           <span style = 'border-color:#984ea3;'></span>
@@ -149,12 +153,19 @@
           <label>Hispanic</label>
           <label>White</label>
           <label>Other</label>
-        </div>
       </div>
+     
+ -->
 
+   <div id='incomeLegend' style='display:none'>
+    <div id="legendColor" style ="border-color:#f0f9e8"><br>0 - $20</div>
+    <div id="legendColor" style ="border-color:#bae4bc"><br>$21 - $40</div>
+    <div id="legendColor" style ="border-color:#7bccc4"><br>$41 - $60</div>
+    <div id="legendColor" style ="border-color:#43a2ca"><br>$61 - $80</div>
+    <div id="legendColor" style ="border-color:#0868ac"><br>$80+</div>
+</div>
 
-  <div class = "four columns">
-    <div id='incomeLegend' style='visibility:hidden'>
+  <!--   <div id='incomeLegend' style='display:none'>
       <div class = 'legendTitle'></div>
         <nav class='legend clearfix'>
           <span style = 'border-color:#f0f9e8;'></span>
@@ -168,11 +179,18 @@
           <label>$61 - $80</label>
           <label>$80+</label>
     </div>
-  </div>
- 
 
-  <div class = "four columns omega">
-    <div id='rentalLegend' style='visibility:hidden'>
+  -->
+
+  <div id='rentalLegend' style='display:none'>
+    <div id="rentlegendColor" style ="border-color:#feebe2"><br>0 - 10%</div>
+    <div id="rentlegendColor" style ="border-color:#fbb4b9"><br>11% - 20%</div>
+    <div id="rentlegendColor" style ="border-color:#f768a1"><br>21% - 40%</div>
+    <div id="rentlegendColor" style ="border-color:#c51b8a"><br>40% - 60%</div>
+    <div id="rentlegendColor" style ="border-color:#7a0177"><br>60%+</div>
+</div>
+
+ <!--    <div id='rentalLegend' style='display:none'>
       <div class = 'legendTitle'></div>
       <nav class='legend clearfix'>
         <span style = 'border-color:#feebe2;'></span>
@@ -185,11 +203,23 @@
         <label>21% - 40%</label>
         <label>40% - 60%</label>
         <label>60%+</label>
-    </div>
-  </div>
-</div>
-</div>
+    </div> -->
 
+ <br>
+ <br>   
+        <div id = "demo"><a id="race" href="#">View Results with Plurality Zip Code Race</a></div>
+      
+        <div id = "money"><a id="income" href="#">View Results with Zip Code's Average Income</a></div>   
+      
+     
+        <div id = "homes"><a id="rentalrate" href="#">View Results with Zip Code's Rental Rate </a></div>
+
+      
+        <div id = "annotated"><a id="annotation" href="#">View Results by Zip Code's Average Rental Rate </a></div>
+    
+
+</div>
+</div>
 <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
 
 <script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.4/mapbox.js'></script>

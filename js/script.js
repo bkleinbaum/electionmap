@@ -1,8 +1,7 @@
 //add map
 
 var map = L.map('map');
-map.setView([40.711339, -73.96302], 10
-
+map.setView([40.711339, -73.96302], 11
 	);
 
 
@@ -116,7 +115,7 @@ $("#demo").click(function(event) {
         $(this).removeClass('selected');
         map.removeLayer(demoLayer);
         map.removeLayer(mayorEDblank);
-        $("#demoLegend").css("visibility", "hidden");
+        $("#demoLegend").hide();
         $(this).css({'background-color':'#B1ACBD'});
 
     } else {
@@ -133,9 +132,9 @@ $("#demo").click(function(event) {
         map.addLayer(mayorEDblank); 
       
       //remove legend 
-        $("#demoLegend").css("visibility", "visible");
-        $("#rentalLegend").css("visibility", "hidden");  
-        $("#incomeLegend").css("visibility", "hidden");
+        $("#demoLegend").show();
+        $("#rentalLegend").hide();  
+        $("#incomeLegend").hide();
       //change colors
         $("#demo").css({'background-color':'#C1ACBD'});
         $("#money").css({'background-color':'#B1ACBD'});
@@ -150,7 +149,7 @@ $("#money").click(function(event) {
     if(map.hasLayer(income)) {
         $(this).removeClass('selected');
         map.removeLayer(income);
-       $("#incomeLegend").css("visibility", "hidden");
+       $("#incomeLegend").hide();
         map.removeLayer(mayorEDblank);
         $(this).css({'background-color':'#B1ACBD'});
        
@@ -166,12 +165,11 @@ $("#money").click(function(event) {
         
         map.addLayer(income);  
         map.addLayer(mayorEDblank);
-        $("#incomeLegend").css("visibility", "visible"); 
+        $("#incomeLegend").show(); 
         
         //remove legends
-        $("#rentalLegend").css("visibility", "hidden");
-        $("#demoLegend").css("visibility", "hidden"); 
-        
+        $("#rentalLegend").hide();
+        $("#demoLegend").hide();
         //change colors
         $(this).css({'background-color':'#C1ACBD'});
         $("#demo").css({'background-color':'#B1ACBD'});
@@ -186,7 +184,7 @@ $("#homes").click(function(event) {
     if(map.hasLayer(ownership)) {
         $(this).removeClass('selected');
         map.removeLayer(ownership);
-        $("#rentalLegend").css("visibility", "hidden");  
+        $("#rentalLegend").hide();  
         map.removeLayer(mayorEDblank);
         $(this).css({'background-color':'#B1ACBD'});
         
@@ -201,12 +199,12 @@ $("#homes").click(function(event) {
     //add layers
         map.addLayer(ownership);  
         map.addLayer(mayorEDblank);
-        $("#rentalLegend").css("visibility", "visible");
+        $("#rentalLegend").show();
         
     
         //remove legends
-        $("#demoLegend").css("visibility", "hidden"); 
-        $("#incomeLegend").css("visibility", "hidden"); 
+        $("#demoLegend").hide(); 
+        $("#incomeLegend").hide(); 
         
         //change color
         $(this).css({'background-color':'#C1ACBD'});
