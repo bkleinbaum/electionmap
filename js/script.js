@@ -255,7 +255,7 @@ var mayorStyleBlank = {
     "fillOpacity": 0,
    };
 
-function makeMayor1Markers (feature,layer) {
+function makeMayor1Markers (feature,layer) { 
   layer.bindPopup(
     "<b> Election District: </b>"+feature.properties.ADED 
     +"<br>"
@@ -275,7 +275,15 @@ function makeMayor1Markers (feature,layer) {
 
 
 var mayorEDblank = new L.GeoJSON.AJAX("webdata/mayored.geojson", {
-  style: mayorStyleBlank,
-  onEachFeature: makeMayor1Markers
-});
+    style: mayorStyle,
+    onEachFeature: makeMayor1Markers
+}).addTo(map);
 
+var $loading = $('#loadingDiv').hide();
+$(document)
+  .ajaxStart(function () {
+    $loading.show();
+  })
+  .ajaxStop(function () {
+    $loading.hide();
+  });

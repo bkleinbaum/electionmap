@@ -14,15 +14,13 @@
 <body>
 
 
-<div class = "container">
-  <div class = "sixteen columns">
+<div id = "loadingDiv"><img src="webdata/spiffygif_30x30.gif"></div>
+
+
     <div class ="header">
       <h2>New York City 2013 Mayoral Primary Election Results</h2>
     </div> 
-    <div id = "description"> 
-    </div>
-  </div>
-</div>  
+   
 
 <!-- <div id='dotLegend'>
   <div class = "container">
@@ -110,13 +108,25 @@
     Each dot represents one vote in an election district for the following candidates:<br>
     </div>    
 
-
+<!-- <div id="dotLegendP">
+      <div class = "dotLegend" style = 'background-color: #FF496C'> <br>Albanese</div> 
+       <div class = "dotLegend" style = 'background-color: #FFA474'><br>Credico</div>
+       <div class = "dotLegend" style = 'background-color: #1F75FE'><br>de Blasio</div>
+       <div class = "dotLegend" style = 'background-color: #9F8170'><br>Grimaldi</div> 
+       <div class = "dotLegend" style = 'background-color: #C8385A'><br>Liu</div>  
+       <div class = "dotLegend" style = 'background-color: #CEFF1D'><br>Quinn</div>
+       <div class = "dotLegend" style = 'background-color: #FF1DCE'><br>Salgado</div>
+       <div class = "dotLegend" style = 'background-color: #FEFE22'><br>Thompson</div>
+       <div class = "dotLegend" style = 'background-color: #FAE7B5'><br>Weiner</div>
+</div>
+ -->
   <table style="width 100%">
     <tr>
-       <td><div class = "dotLegend" style = 'background-color: #FF496C'> <br>Albanese</div></td> 
+       <td><div class = "dotLegend" style = 'background-color: #FF496C'><br>Albanese</div></td> 
        <td><div class = "dotLegend" style = 'background-color: #FFA474'><br>Credico</div></td>
        <td><div class = "dotLegend" style = 'background-color: #1F75FE'><br>de Blasio</div></td>
     </tr>
+
     <tr>   
        <td><div class = "dotLegend" style = 'background-color: #9F8170'><br>Grimaldi</div></td> 
        <td><div class = "dotLegend" style = 'background-color: #C8385A'><br>Liu</div></td>  
@@ -129,6 +139,8 @@
      </tr>
   </table>  
 
+<br>
+<br>
   <div class = "legends">
 
 
@@ -158,11 +170,11 @@
  -->
 
    <div id='incomeLegend' style='display:none'>
-    <div id="legendColor" style ="border-color:#f0f9e8"><br>0 - $20</div>
-    <div id="legendColor" style ="border-color:#bae4bc"><br>$21 - $40</div>
-    <div id="legendColor" style ="border-color:#7bccc4"><br>$41 - $60</div>
-    <div id="legendColor" style ="border-color:#43a2ca"><br>$61 - $80</div>
-    <div id="legendColor" style ="border-color:#0868ac"><br>$80+</div>
+    <div id="legendColor" style ="border-color:#f0f9e8"><br>0 - $20k</div>
+    <div id="legendColor" style ="border-color:#bae4bc"><br>$21k - $40k</div>
+    <div id="legendColor" style ="border-color:#7bccc4"><br>$41k - $60k</div>
+    <div id="legendColor" style ="border-color:#43a2ca"><br>$61k - $80k</div>
+    <div id="legendColor" style ="border-color:#0868ac"><br>$80k+</div>
 </div>
 
   <!--   <div id='incomeLegend' style='display:none'>
@@ -205,21 +217,24 @@
         <label>60%+</label>
     </div> -->
 
- <br>
- <br>   
-        <div id = "demo"><a id="race" href="#">View Results with Plurality Zip Code Race</a></div>
+<br>
+<br>
+<div id="buttonTitle">View By Zip Codes:</div>
+        <div id = "demo"><a id="race" href="#">Plurality  Race</a></div>
       
-        <div id = "money"><a id="income" href="#">View Results with Zip Code's Average Income</a></div>   
+        <div id = "money"><a id="income" href="#">Average Income</a></div>   
       
      
-        <div id = "homes"><a id="rentalrate" href="#">View Results with Zip Code's Rental Rate </a></div>
+        <div id = "homes"><a id="rentalrate" href="#">Rental Rate </a></div>
 
       
-        <div id = "annotated"><a id="annotation" href="#">View Results by Zip Code's Average Rental Rate </a></div>
+        <div id = "annotated"><a id="annotation" href="#">Rental Rate </a></div>
     
 
 </div>
 </div>
+
+
 <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
 
 <script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.4/mapbox.js'></script>
