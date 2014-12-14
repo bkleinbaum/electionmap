@@ -6,11 +6,11 @@ map.setView([40.711339, -73.86302], 11
 
 
 
-L.mapbox.accessToken = 'pk.eyJ1IjoiYms3NDEiLCJhIjoiZFNVcTNvdyJ9.h8G4i4ib7PicRCiejvZW6g';
-// Replace 'examples.map-i87786ca' with your map id.
-var mapboxTiles = L.tileLayer('https://{s}.tiles.mapbox.com/v3/bk741.vs2d42t9/{z}/{x}/{y}.png', {
- maxZoom: 14,
- minZoom: 10}).addTo(map);
+// L.mapbox.accessToken = 'pk.eyJ1IjoiYms3NDEiLCJhIjoiZFNVcTNvdyJ9.h8G4i4ib7PicRCiejvZW6g';
+// // Replace 'examples.map-i87786ca' with your map id.
+// var mapboxTiles = L.tileLayer('https://{s}.tiles.mapbox.com/v3/bk741.vs2d42t9/{z}/{x}/{y}.png', {
+//  maxZoom: 14,
+//  minZoom: 10}).addTo(map);
 
 L.mapbox.accessToken = 'pk.eyJ1IjoiYms3NDEiLCJhIjoiZFNVcTNvdyJ9.h8G4i4ib7PicRCiejvZW6g';
 // Replace 'examples.map-i87786ca' with your map id.
@@ -316,4 +316,6 @@ function onZoomend() {
 
     };
     map.on('zoomend', onZoomend);
+
+
 

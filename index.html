@@ -12,9 +12,11 @@
 </head>
 <body>
 
-<div class ="header">
+<div class ="title">
   New York City 2013 Mayoral Primary Election Results
 </div> 
+
+
 
 <div id="map"></div>
  
@@ -22,32 +24,44 @@
 <div class = "sideBar">
 
    <div id = "voteExplanation">
-    Each dot represents one vote in an election district for the following candidates:<br>
+    <b>Each dot represents one vote in an election district for the following candidates:</b><br>
     </div>    
-
   <table style="width 100%">
     <tr>
-       <td><div class = "dotLegend" style = 'background-color: #FF496C'><br>Albanese</div></td> 
-       <td><div class = "dotLegend" style = 'background-color: #FFA474'><br>Credico</div></td>
-       <td><div class = "dotLegend" style = 'background-color: #1F75FE'><br>de Blasio</div></td>
+       <td><div class = "dotLegend" style = 'background-color: #FF496C'></td> 
+       <td><div class = "dotLegend" style = 'background-color: #FFA474'></td>
+       <td><div class = "dotLegend" style = 'background-color: #1F75FE'></td>
+    </tr>
+    <tr>
+      <td><div class = "dotname">Albanese</div></td> 
+      <td><div class = "dotname">Credico</div></td>
+      <td><div class = "dotname">de Blasio</div></td>
     </tr>
 
-    <tr>   
-       <td><div class = "dotLegend" style = 'background-color: #9F8170'><br>Grimaldi</div></td> 
-       <td><div class = "dotLegend" style = 'background-color: #C8385A'><br>Liu</div></td>  
-       <td><div class = "dotLegend" style = 'background-color: #CEFF1D'><br>Quinn</div></td>
-    </tr>   
+   <tr>   
+       <td><div class = "dotLegend" style = 'background-color: #9F8170'></div></td> 
+       <td><div class = "dotLegend" style = 'background-color: #C8385A'></div></td>  
+       <td><div class = "dotLegend" style = 'background-color: #CEFF1D'></div></td>
+    </tr>
     <tr>
-       <td><div class = "dotLegend" style = 'background-color: #FF1DCE'><br>Salgado</div></td>
-       <td><div class = "dotLegend" style = 'background-color: #FEFE22'><br>Thompson</div></td>
-       <td><div class = "dotLegend" style = 'background-color: #FAE7B5'><br>Weiner</div></td>
-     </tr>
-  </table>  
+      <td><div class = "dotname">Grimaldi</div></td> 
+      <td><div class = "dotname">Liu</div></td>
+      <td><div class = "dotname">Quinn</div></td>
+    </tr>
+     <tr>
+       <td><div class = "dotLegend" style = 'background-color: #FF1DCE'></div></td>
+       <td><div class = "dotLegend" style = 'background-color: #FEFE22'></div></td>
+       <td><div class = "dotLegend" style = 'background-color: #FAE7B5'></div></td>
+     </tr> 
+    <tr>
+      <td><div class = "dotname">Salgado</div></td> 
+      <td><div class = "dotname">Thompson</div></td>
+      <td><div class = "dotname">Weiner</div></td>
+    </tr>
+</table>
 
-<br>
-<br>
-  <div class = "legends">
 
+<div class = "legends">
 
     <div id='demoLegend' style='display:none'>
         <div id="legendColor" style ="border-color:#984ea3"><br>Asian</div>
@@ -67,28 +81,40 @@
 
 
 
-      <div id='rentalLegend' style='display:none'>
+    <div id='rentalLegend' style='display:none'>
         <div id="rentlegendColor" style ="border-color:#feebe2"><br>0 - 10%</div>
         <div id="rentlegendColor" style ="border-color:#fbb4b9"><br>11% - 20%</div>
         <div id="rentlegendColor" style ="border-color:#f768a1"><br>21% - 40%</div>
         <div id="rentlegendColor" style ="border-color:#c51b8a"><br>40% - 60%</div>
         <div id="rentlegendColor" style ="border-color:#7a0177"><br>60%+</div>
     </div>
-  <br>
-  <br>
-  <br>
+
+<br>
+<br>
           <div id = "demo"><a id="race" href="#">View Plurality  Race in Zip Codes</a></div>
           <div id = "money"><a id="income" href="#">View Average Income in Zip Codes</a></div>   
           <div id = "homes"><a id="rentalrate" href="#">View Rental Rate in Zip Codes</a></div>
-  </div>
-</div>
+
+  </div> 
+   
+
+    <div class="chart">Top Four Finishers:
+      <div id= "deBlasio" style="width: 224.1px; background-color: #1F75FE">de Blasio 40.82% &#160;</div>
+      <div id = "Liu" style="width: 54.2px; background-color: #C8385A">Liu 6.83% &#160;</div>
+      <div id = "Quinn" style="width: 98.7px; background-color: #CEFF1D">Quinn 15.75%&#160;</div>
+      <div id = "Thompson" style="width: 150.8px; background-color: #FEFE22">Thompson 26.15% &#160;</div>
+    </div>
+
+ </div>
+
+
 
 
 
 <script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.4/mapbox.js'></script>
 <script src='//api.tiles.mapbox.com/mapbox.js/plugins/leaflet-omnivore/v0.2.0/leaflet-omnivore.min.js'></script>
 <script src='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-label/v0.2.1/leaflet.label.js'></script>
-
+<script src="http://d3js.org/d3.v3.min.js"></script>
 <script src="js/leaflet.ajax.min.js"></script>
 <script src="src/leaflet.Label.js"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>

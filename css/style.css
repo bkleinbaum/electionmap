@@ -4,12 +4,39 @@ body {
   margin: 0;
 }
 
-.header {
+.title {
   height: 5vh;
   padding-top: 5px;
   font-size: 20px;
   text-align: center;
- border: 1px solid gray;
+  border: 1px solid gray;
+}
+
+
+#deBlasio, #Liu, #Quinn, #Thompson, #Weiner {
+  
+  margin-top: 2px;
+  font-size: 10px;
+  text-align: right;
+  background-color: blue;
+  height: 20px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: gray;
+  white-space: nowrap;
+}
+
+
+
+.chart {
+  margin-left: 10px;
+  color: black;
+  margin-top: 150px;
+  border-top-style: dashed;
+  border-top-width: 2px;
+  border-top-color: gray;
+  margin-right: 10px;
+  padding-top: 15px;
 }
 
 #map {
@@ -24,7 +51,7 @@ body {
   right: 20px;
   top: 100px;
   width: 250px;
-  height: 425px;
+  height: 485px;
   background: rgba(192, 192, 192, .9);
   border-radius: 10px;
 }
@@ -33,7 +60,6 @@ body {
   font-size: 14px;
   display: block;
   text-align: left;
-  padding-top: 12px;
   margin: 10px;
 }
 
@@ -46,34 +72,36 @@ body {
   font-size: 14px;
   line-height: 120%;
   white-space:nowrap;
+  margin-right: auto;
+  margin-left: auto;
 } 
 
 
 table{
-  margin-left: 1vw;
-  margin-right: 0vw;
+ margin-right: auto;
+ margin-left: auto;
+ font-size: 12px;
 }
 
-th, td {
-  height:50px;
+td {
+ /* height:50px;*/
   width: 80px;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-
+text-align: center;
+margin-right: auto;
+margin-left: auto;
 }
 
 
 .legends{
   position: absolute;
-  bottom: 10px;
   width: 100%;
   margin: 0 auto;
   display: block;
+  padding-top: 10px;
+  padding-bottom: 10px;
+ 
  
 }
-
-
 
 #demo, #money, #homes {
     positon: absolute;
@@ -89,6 +117,7 @@ th, td {
     border-radius: 5px;
      
 }
+
 
 
 #race, #income, #rentalrate, #annotation:visited {
@@ -144,3 +173,4 @@ content:none;
 .leaflet-shadow-pane {
   display: none;
 }
+
