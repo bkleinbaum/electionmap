@@ -4,12 +4,16 @@ body {
   margin: 0;
 }
 
-#header {
-  height: 3vh;
+.header {
+  height: 5vh;
+  padding-top: 5px;
+  font-size: 20px;
+  text-align: center;
+ border: 1px solid gray;
 }
 
 #map {
-  height: 90vh;
+  height: 94vh;
   position: relative;
   z-index: 9;
 }
@@ -17,13 +21,48 @@ body {
 .sideBar {
   position: absolute;
   z-index: 10;
-  right: 10px;
+  right: 20px;
   top: 100px;
   width: 250px;
-  height: 450px;
-  background: rgba(192, 192, 192, .7);
+  height: 425px;
+  background: rgba(192, 192, 192, .9);
   border-radius: 10px;
 }
+
+#voteExplanation{
+  font-size: 14px;
+  display: block;
+  text-align: left;
+  padding-top: 12px;
+  margin: 10px;
+}
+
+
+.dotLegend {
+  text-align: center;
+  height: 10px;
+  width: 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  line-height: 120%;
+  white-space:nowrap;
+} 
+
+
+table{
+  margin-left: 1vw;
+  margin-right: 0vw;
+}
+
+th, td {
+  height:50px;
+  width: 80px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+
+}
+
 
 .legends{
   position: absolute;
@@ -34,13 +73,9 @@ body {
  
 }
 
-#buttonTitle{
-  margin: 10px;
-  font-size: 12px
 
-}
 
-#demo, #money, #homes, #annotated {
+#demo, #money, #homes {
     positon: absolute;
     background-color: #B1ACBD;
     border: 1px solid gray;
@@ -49,6 +84,9 @@ body {
     font-size: 12px;
     width: 110 px;
     margin-top: 5px;
+    margin-right: 10px;
+    margin-left: 10px;
+    border-radius: 5px;
      
 }
 
@@ -57,13 +95,7 @@ body {
     color: white;
 }
 
-#voteExplanation{
-  font-size: 14px;
-  display: block;
-  text-align: left;
-  padding-top: 12px;
-  margin: 10px;
-}
+
 
 a:link {
     color: white;
@@ -81,90 +113,34 @@ a:link {
 }
 
 
-
-#legendColor {
+#legendColor, 
+#rentlegendColor  {
   height: 10px;
   width: 40px;
   border-style: solid;
   float: left;
   font-size: 10px;
   text-align: center;
-/*  white-space: nowrap;*/
   line-height: 125%;
   margin-top: 5px
 
 }
 
-#rentlegendColor {
-height: 10px;
-  width: 40px;
-  border-style: solid;
-  float: left;
-  font-size: 10px;
-  text-align: center;
- /* white-space: nowrap;*/
-  line-height: 125%;
+.leaflet-label{
+  background: none;
+  border-color: none;
+  border-width: 0;
 
 }
 
-/*.legend label {
-  display:inline;
-  float:left;
-  height:15px;
-  width: 20%;
-  text-align:center;
-  font-size:10px;
-  color:#808080;
-  }
-
-.legend span {
-  float:left;
-  height:15px;
-  width:3vw;
-  text-align:center;
-  font-size:10px;
-  color:#808080;
-  border-style:solid;
-  margin-left: 10%;
-  margin-right: 10%;
-}*/
-/*
-#candLegend {
-  margin-left: 20px; 
-  text-align: center;
-  font-size:10px;
-  color:#7a0177;
-  }*/
-
-.dotLegend {
-  /*margin-left: 25px;*/
-  text-align: center;
-   height: 10px;
-   width: 10px;
-   /*bottom-padding: 25%;*/
-   border-radius: 5px;
-  font-size: 10px;
-  line-height: 120%
-} 
-
-
-table{
-  margin-left: 1vw;
-  margin-right: 0vw;
+.leaflet-label-right:before, .leaflet-label-left:after {
+content:none;
 }
 
-th, td {
-  height:50px;
-  width: 60px;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-
+.leaflet-marker-icon {
+  opacity: .001;
 }
 
-#loadingDiv {
-  position: absolute;
-  z-index: 100;
-  vertical-align: middle;
-  margin-right: 50vw;
+.leaflet-shadow-pane {
+  display: none;
 }

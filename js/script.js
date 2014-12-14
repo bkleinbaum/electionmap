@@ -1,7 +1,7 @@
 //add map
 
 var map = L.map('map');
-map.setView([40.711339, -73.96302], 11
+map.setView([40.711339, -73.86302], 11
 	);
 
 
@@ -21,7 +21,7 @@ var mapboxTiles = L.tileLayer('https://{s}.tiles.mapbox.com/v3/bk741.b5k4kj4i/{z
 
 
 
-//import race layer
+//import race layer http://leafletjs.com/examples/choropleth.html
 
 
 function getDemoColor(d) {
@@ -107,7 +107,7 @@ function style(feature) {
 var ownership = new L.GeoJSON.AJAX("webdata/rent98.geojson", {style: style});
 
 
- //toggle layers
+ //toggle layers http://stackoverflow.com/questions/24658596/hide-show-layergroups-in-leaflet-with-own-buttons
 
 $("#demo").click(function(event) {
     event.preventDefault();
@@ -215,6 +215,10 @@ $("#homes").click(function(event) {
 });
 
 
+
+
+
+
 //import mayor layer
 
 var mayorStyle = {
@@ -279,11 +283,37 @@ var mayorEDblank = new L.GeoJSON.AJAX("webdata/mayored.geojson", {
     onEachFeature: makeMayor1Markers
 }).addTo(map);
 
-var $loading = $('#loadingDiv').hide();
-$(document)
-  .ajaxStart(function () {
-    $loading.show();
-  })
-  .ajaxStop(function () {
-    $loading.hide();
-  });
+
+//make labels
+var callLocatorLayer= L.geoJson(nabeNames, {
+    style: function (feature) {
+        return {color: '#03f'};
+        },
+    pointToLayer: function (feature, latlng) {
+        return L.marker(latlng).bindLabel( feature.properties.neighborho, {noHide: true});
+    }
+});
+
+
+//add neighrborhood names https://groups.google.com/forum/#!topic/leaflet-js/-mIiapoMLHA
+
+function onZoomend() {
+        
+        try { 
+            map.removeLayer(callLocatorLayer); 
+        } 
+        catch (err){ 
+            console.log('no draw control to remove'); 
+        };
+
+        if (map.getZoom() > 12) {
+            map.addLayer(callLocatorLayer);
+        
+        } else {
+           map.removeLayer(callLocatorLayer)};
+
+
+
+    };
+    map.on('zoomend', onZoomend);
+

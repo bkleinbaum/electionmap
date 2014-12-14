@@ -3,9 +3,8 @@
 <head>
 	<meta charset="UTF-8">
 	<title>election data</title>
-	<link rel="stylesheet" href="css/skeleton.css"/>
   <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css"/>
+	<link rel="stylesheet" href="css/leaflet.css"/>
 	<link href='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-label/v0.2.1/leaflet.label.css' rel='stylesheet' />
 	<link href='https://api.tiles.mapbox.com/mapbox.js/v2.1.4/mapbox.css' rel='stylesheet' />
 	<link rel="stylesheet" href="css/style.css">
@@ -13,94 +12,12 @@
 </head>
 <body>
 
-
-<div id = "loadingDiv"><img src="webdata/spiffygif_30x30.gif"></div>
-
-
-    <div class ="header">
-      <h2>New York City 2013 Mayoral Primary Election Results</h2>
-    </div> 
-   
-
-<!-- <div id='dotLegend'>
-  <div class = "container">
-    <div class = "one
-     columns alpha">
-      <div class = "dotLegend" style = 'background-color: #FF496C'></div> 
-    </div>
-    <div class = "one
-     columns">
-      <div class = "dotLegend" style = 'background-color: #FFA474'></div>
-    </div>
-    <div class = "one
-     columns">
-      <div class = "dotLegend" style = 'background-color: #1F75FE'></div> 
-    </div>
-    <div class = "one
-     columns">
-      <div class = "dotLegend" style = 'background-color: #9F8170'></div> 
-    </div>
-    <div class = "one
-     columns">
-      <div class = "dotLegend" style = 'background-color: #C8385A'></div> 
-    </div>
-    <div class = "one
-     columns">
-      <div class = "dotLegend" style = 'background-color: #CEFF1D'></div>
-    </div>
-    <div class = "one
-     columns">
-      <div class = "dotLegend" style = 'background-color: #FF1DCE'></div>
-    </div>
-    <div class = "one
-     columns">
-      <div class = "dotLegend" style = 'background-color: #FEFE22'></div>
-    </div>
-    <div class = "one
-     columns omega">
-      <div class = "dotLegend" style = 'background-color: #FAE7B5'></div>
-    </div>
-  </div>
+<div class ="header">
+  New York City 2013 Mayoral Primary Election Results
 </div> 
 
-
-<div id='candLegend'>
-  <div class = "container">
-    <div class = "one columns alpha">
-    Albanese 
-    </div>
-    <div class = "one columns">
-    Credico
-    </div>
-    <div class = "one columns">
-    de Blasio
-    </div>
-    <div class = "one columns">
-    Grimaldi
-    </div>
-    <div class = "one columns">
-    Liu
-    </div>
-    <div class = "one columns">
-    Quinn
-    </div>
-    <div class = "one columns">
-    Salgado
-    </div>
-    <div class = "one columns">
-    Thompson
-    </div>
-    <div class = "one columns omega">
-    Weiner
-    </div>
-  </div>
-</div>  -->
-
-
-    <div id="map"></div>
+<div id="map"></div>
  
- 
-
 
 <div class = "sideBar">
 
@@ -108,18 +25,6 @@
     Each dot represents one vote in an election district for the following candidates:<br>
     </div>    
 
-<!-- <div id="dotLegendP">
-      <div class = "dotLegend" style = 'background-color: #FF496C'> <br>Albanese</div> 
-       <div class = "dotLegend" style = 'background-color: #FFA474'><br>Credico</div>
-       <div class = "dotLegend" style = 'background-color: #1F75FE'><br>de Blasio</div>
-       <div class = "dotLegend" style = 'background-color: #9F8170'><br>Grimaldi</div> 
-       <div class = "dotLegend" style = 'background-color: #C8385A'><br>Liu</div>  
-       <div class = "dotLegend" style = 'background-color: #CEFF1D'><br>Quinn</div>
-       <div class = "dotLegend" style = 'background-color: #FF1DCE'><br>Salgado</div>
-       <div class = "dotLegend" style = 'background-color: #FEFE22'><br>Thompson</div>
-       <div class = "dotLegend" style = 'background-color: #FAE7B5'><br>Weiner</div>
-</div>
- -->
   <table style="width 100%">
     <tr>
        <td><div class = "dotLegend" style = 'background-color: #FF496C'><br>Albanese</div></td> 
@@ -144,106 +49,52 @@
   <div class = "legends">
 
 
-<div id='demoLegend' style='display:none'>
-    <div id="legendColor" style ="border-color:#984ea3"><br>Asian</div>
-    <div id="legendColor" style ="border-color:#377eb8"><br>Black</div>
-    <div id="legendColor" style ="border-color:#4daf4a"><br>Hispanic</div>
-    <div id="legendColor" style ="border-color:#e41a1c"><br>White</div>
-    <div id="legendColor" style ="border-color:#ff7f00"><br>Other</div>
-</div>
-<!-- 
-      <div id='demoLegend' style='display:none'>
-        <div class = 'legendTitle'></div>
-        <nav class='legend clearfix'>
-          <span style = 'border-color:#984ea3;'></span>
-          <span style = 'border-color:#377eb8;'></span>
-          <span style='border-color:#4daf4a;'></span>
-          <span style='border-color:#e41a1c;'></span>
-          <span style='border-color:#ff7f00;'></span>
-          <label>Asian</label>
-          <label>Black</label>
-          <label>Hispanic</label>
-          <label>White</label>
-          <label>Other</label>
-      </div>
-     
- -->
-
-   <div id='incomeLegend' style='display:none'>
-    <div id="legendColor" style ="border-color:#f0f9e8"><br>0 - $20k</div>
-    <div id="legendColor" style ="border-color:#bae4bc"><br>$21k - $40k</div>
-    <div id="legendColor" style ="border-color:#7bccc4"><br>$41k - $60k</div>
-    <div id="legendColor" style ="border-color:#43a2ca"><br>$61k - $80k</div>
-    <div id="legendColor" style ="border-color:#0868ac"><br>$80k+</div>
-</div>
-
-  <!--   <div id='incomeLegend' style='display:none'>
-      <div class = 'legendTitle'></div>
-        <nav class='legend clearfix'>
-          <span style = 'border-color:#f0f9e8;'></span>
-          <span style = 'border-color:#bae4bc;'></span>
-          <span style='border-color:#7bccc4;'></span>
-          <span style='border-color:#43a2ca;'></span>
-          <span style='border-color:#0868ac;'></span>
-          <label>0 - $20</label>
-          <label>$21 - $40</label>
-          <label>$41 - $60</label>
-          <label>$61 - $80</label>
-          <label>$80+</label>
+    <div id='demoLegend' style='display:none'>
+        <div id="legendColor" style ="border-color:#984ea3"><br>Asian</div>
+        <div id="legendColor" style ="border-color:#377eb8"><br>Black</div>
+        <div id="legendColor" style ="border-color:#4daf4a"><br>Hispanic</div>
+        <div id="legendColor" style ="border-color:#e41a1c"><br>White</div>
+        <div id="legendColor" style ="border-color:#ff7f00"><br>Other</div>
     </div>
 
-  -->
+       <div id='incomeLegend' style='display:none'>
+        <div id="legendColor" style ="border-color:#f0f9e8"><br>0 - $20k</div>
+        <div id="legendColor" style ="border-color:#bae4bc"><br>$21k - $40k</div>
+        <div id="legendColor" style ="border-color:#7bccc4"><br>$41k - $60k</div>
+        <div id="legendColor" style ="border-color:#43a2ca"><br>$61k - $80k</div>
+        <div id="legendColor" style ="border-color:#0868ac"><br>$80k+</div>
+    </div>
 
-  <div id='rentalLegend' style='display:none'>
-    <div id="rentlegendColor" style ="border-color:#feebe2"><br>0 - 10%</div>
-    <div id="rentlegendColor" style ="border-color:#fbb4b9"><br>11% - 20%</div>
-    <div id="rentlegendColor" style ="border-color:#f768a1"><br>21% - 40%</div>
-    <div id="rentlegendColor" style ="border-color:#c51b8a"><br>40% - 60%</div>
-    <div id="rentlegendColor" style ="border-color:#7a0177"><br>60%+</div>
-</div>
 
- <!--    <div id='rentalLegend' style='display:none'>
-      <div class = 'legendTitle'></div>
-      <nav class='legend clearfix'>
-        <span style = 'border-color:#feebe2;'></span>
-        <span style = 'border-color:#fbb4b9;'></span>
-        <span style='border-color:#f768a1;'></span>
-        <span style='border-color:#c51b8a;'></span>
-        <span style='border-color:#7a0177;'></span>
-        <label>0 - 10%</label>
-        <label>11% - 20%</label>
-        <label>21% - 40%</label>
-        <label>40% - 60%</label>
-        <label>60%+</label>
-    </div> -->
 
-<br>
-<br>
-<div id="buttonTitle">View By Zip Codes:</div>
-        <div id = "demo"><a id="race" href="#">Plurality  Race</a></div>
-      
-        <div id = "money"><a id="income" href="#">Average Income</a></div>   
-      
-     
-        <div id = "homes"><a id="rentalrate" href="#">Rental Rate </a></div>
-
-      
-        <div id = "annotated"><a id="annotation" href="#">Rental Rate </a></div>
-    
-
-</div>
+      <div id='rentalLegend' style='display:none'>
+        <div id="rentlegendColor" style ="border-color:#feebe2"><br>0 - 10%</div>
+        <div id="rentlegendColor" style ="border-color:#fbb4b9"><br>11% - 20%</div>
+        <div id="rentlegendColor" style ="border-color:#f768a1"><br>21% - 40%</div>
+        <div id="rentlegendColor" style ="border-color:#c51b8a"><br>40% - 60%</div>
+        <div id="rentlegendColor" style ="border-color:#7a0177"><br>60%+</div>
+    </div>
+  <br>
+  <br>
+  <br>
+          <div id = "demo"><a id="race" href="#">View Plurality  Race in Zip Codes</a></div>
+          <div id = "money"><a id="income" href="#">View Average Income in Zip Codes</a></div>   
+          <div id = "homes"><a id="rentalrate" href="#">View Rental Rate in Zip Codes</a></div>
+  </div>
 </div>
 
 
-<script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
 
 <script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.4/mapbox.js'></script>
 <script src='//api.tiles.mapbox.com/mapbox.js/plugins/leaflet-omnivore/v0.2.0/leaflet-omnivore.min.js'></script>
 <script src='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-label/v0.2.1/leaflet.label.js'></script>
 
 <script src="js/leaflet.ajax.min.js"></script>
+<script src="src/leaflet.Label.js"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="webdata/nabecentroid.js"></script>
 <script src="js/script.js"></script>
-	
+
+
 </body>
 </html>
