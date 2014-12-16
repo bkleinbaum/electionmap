@@ -317,14 +317,7 @@ function onZoomend() {
     };
     map.on('zoomend', onZoomend);
 
-//source popout https://github.com/xsavi780/popupWindow
-
-$('#about').on('click',function(){
-    $('#mask').fadeIn(250);
-    $('.popup').fadeIn(250);
-});
-
-$('.close').on('click',function(){
-    $(this).parent().fadeOut(250);
-    $('#mask').fadeOut(250);
+//loading http://www.jquerybyexample.net/2012/06/show-loading-image-while-page-is.html
+$(window).load(function(){
+  $('#dvLoading').fadeOut(1000);
 });

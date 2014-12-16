@@ -174,5 +174,23 @@ content:none;
   display: none;
 }
 
+#dvLoading
+{
+   background:  no-repeat center center;
+   height: 100px;
+   width: 100px;
+   position: fixed;
+   z-index: 1000;
+   left: 50%;
+   top: 50%;
+   margin: -25px 0 0 -25px;
+}
 
 
+.sources {
+  position:absolute;
+  bottom: 0px;
+  left: 5px;
+  z-index: 12;
+  font-size: 10px
+}
