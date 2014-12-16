@@ -319,5 +319,5 @@ function onZoomend() {
 
 //loading http://www.jquerybyexample.net/2012/06/show-loading-image-while-page-is.html
 $(window).load(function(){
-  $('#dvLoading').fadeOut(1000);
+  $('#dvLoading').fadeOut(1200);
 });
